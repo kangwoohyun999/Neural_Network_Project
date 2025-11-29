@@ -1,5 +1,14 @@
 # 신경망 조별과제
 
+## Fashion-mnist 다운로드
+https://github.com/zalandoresearch/fashion-mnist
+* ZIP 파일 다운로드 후 압축 해제
+* data/fashion/... (4개 파일)
+* Neural_Network_Project/dataset 에 옮기기
+
+## 실행
+
+
 ## 최고 Accuracy를 도출하는 방법 (PPT 활용 예정)
 * Train / Validation 분리
 * BatchNorm / Dropout 적용한 MultiLayerNetExtend 사용
