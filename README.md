@@ -9,7 +9,7 @@ https://github.com/zalandoresearch/fashion-mnist
 ## 실행
 
 
-## 최고 Accuracy를 도출하는 방법 (PPT 활용 예정)
+## 최고 Accuracy를 도출하는 방법 (PPT 활용 예정, 수정중)
 * Train / Validation 분리
 * BatchNorm / Dropout 적용한 MultiLayerNetExtend 사용
 * 적절한 WeightDecay & Learning-rate schedule 적용
