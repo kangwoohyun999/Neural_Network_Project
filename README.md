@@ -18,12 +18,6 @@ https://github.com/zalandoresearch/fashion-mnist
 * 성능 좋은 layer 구성 (128-128-64-64)
 * EarlyStopping or Best model 저장
 
-# Neural_Network_Project
-
-> Python 기반 신경망 프로젝트 (Fashion-MNIST)
-> Multi-layer Perceptron(MLP) / CNN 구조를 학습하고 평가합니다.
-> Weight Decay, Dropout, BatchNorm 등 Regularization 기법 적용 가능
-
 ---
 
 ## 📂 프로젝트 구조 (수정중)
