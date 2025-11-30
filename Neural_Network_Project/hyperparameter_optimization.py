@@ -76,7 +76,7 @@ def hyperparameter_search():
 
     for trial in range(1, trials + 1):
         print(f"\n==============================")
-        print(f"⚡ Trial {trial}/{trials}")
+        print(f"Trial {trial}/{trials}")
         print("==============================")
 
         params = sample_hyperparams()
@@ -110,9 +110,6 @@ def hyperparameter_search():
             best_setting = params
             best_model_params = model.params.copy()
 
-    print("\n=================================")
-    print("🎉 Hyperparameter Search Finished")
-    print("=================================")
     print("Best Validation Accuracy:", best_acc)
     print("Best Hyperparameters:", best_setting)
 
@@ -121,7 +118,7 @@ def hyperparameter_search():
     with open(model_path, "wb") as f:
         pickle.dump(best_model_params, f)
 
-    print(f"\n💾 Best Model Saved → {model_path}\n")
+    print(f"\nBest Model Saved → {model_path}\n")
 
 
 if __name__ == "__main__":
