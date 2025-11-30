@@ -25,11 +25,13 @@ https://github.com/zalandoresearch/fashion-mnist
 ```
 Neural_Network_Project/
  ├── common/__init__.py
-         ├─ functions.py
-         ├─ layers.py
-         └─ optimizer.py
- ├── dataset/
- ├── model/
+ ├       ├─ functions.py
+ ├       ├─ layers.py
+ ├       └─ optimizer.py
+ ├── dataset/__init__.py
+ ├        └─ fashion_mnist_loader.py
+ ├── model/__init__.py
+ ├        └─ multilayer_net.py
  ├── Competition_Code_NeuralNet.py
  ├── hyperparameter_optimization.py
  ├── train_and_save_network.py
