@@ -24,12 +24,15 @@ https://github.com/zalandoresearch/fashion-mnist
 
 ```
 Neural_Network_Project/
- ├── dataset/                # Fashion-MNIST 데이터 저장 폴더
- ├── models/                 # MLP/CNN 모델 정의
- ├── utils/                  # 데이터 처리 및 유틸
- ├── train.py                # 학습 실행 스크립트
- ├── evaluate.py             # 테스트/검증 스크립트
- ├── plot.py                 # 손실/정확도 시각화
+ ├── common/__init__.py
+         ├─ functions.py
+         ├─ layers.py
+         └─ optimizer.py
+ ├── dataset/
+ ├── model/
+ ├── Competition_Code_NeuralNet.py
+ ├── hyperparameter_optimization.py
+ ├── train_and_save_network.py
  └── README.md
 ```
 
