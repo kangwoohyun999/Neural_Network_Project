@@ -26,7 +26,7 @@ https://github.com/zalandoresearch/fashion-mnist
 
 ---
 
-## 📂 프로젝트 구조
+## 📂 프로젝트 구조 (수정중)
 
 ```
 Neural_Network_Project/
