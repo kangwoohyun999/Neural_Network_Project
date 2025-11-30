@@ -75,9 +75,7 @@ def hyperparameter_search():
     trials = 10  # 시도 횟수
 
     for trial in range(1, trials + 1):
-        print(f"\n==============================")
         print(f"Trial {trial}/{trials}")
-        print("==============================")
 
         params = sample_hyperparams()
 
