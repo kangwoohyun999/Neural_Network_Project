@@ -165,3 +165,6 @@ model.to("cuda")
 # 3. Optimizer with Weight Decay
 optimizer = torch.optim.A
 ```
+
+## 학습률 0.001~0.005 or 0.01~0.05 (까먹음)
+## 에폭 수 20~30
