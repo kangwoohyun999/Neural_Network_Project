@@ -16,14 +16,66 @@ https://github.com/zalandoresearch/fashion-mnist
 ## 실행
 
 
-## 최고 Accuracy를 도출하는 방법 (PPT 활용 예정, 수정중)
-* Train / Validation 분리
-* BatchNorm / Dropout 적용한 MultiLayerNetExtend 사용
-* 적절한 WeightDecay & Learning-rate schedule 적용
-* Epoch 수 충분히 늘리기 (200~300 epoch)
-* Mini-batch SGD + Adam 혼합 or AdamW 사용
-* 성능 좋은 layer 구성 (128-128-64-64)
-* EarlyStopping or Best model 저장
+🎯 간단 소개
+① 목적
+
+Fashion-MNIST 분류
+
+교재 4–6장 기반
+
+Adam 사용
+
+6층 이하 신경망
+
+② 데이터셋 설명
+
+28×28 gray, 10 classes
+
+Train 60,000 / Test 10,000
+
+③ 모델 구조
+
+Input 784
+
+Dense 256 → ReLU
+
+Dense 256 → ReLU
+
+Dense 128 → ReLU
+
+Output 10
+
+④ 방법론
+
+Adam → 빠른 수렴
+
+Dropout → 과적합 완화
+
+ReLU + He 초기화
+
+미니배치 학습
+
+⑤ 실험
+
+Learning rate 비교
+
+Dropout 유무 비교
+
+Batchnorm 유무 비교
+
+⑥ 결과
+
+최종 Train/Test accuracy
+
+Loss / Accuracy curve
+
+⑦ 결론
+
+Dropout이 가장 효과적
+
+Adam이 SGD 대비 빠름
+
+최종 모델 제출
 
 ---
 
