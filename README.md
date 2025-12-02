@@ -66,27 +66,40 @@ https://github.com/zalandoresearch/fashion-mnist
 ## 📂 프로젝트 구조 (아래 전부 다 수정중)
 
 ```
-Neural_Network_Project/
- ├── common/__init__.py
- ├       ├─ functions.py
- ├       ├─ layers.py
- ├       └─ optimizer.py
- ├── dataset/__init__.py
- ├        └─ fashion_mnist_loader.py
- ├── model/__init__.py
- ├        └─ multilayer_net.py
+Neural_Network_Project
+ │
+ ├── common
+ │    ├─ __init__.py
+ │    ├─ functions.py
+ │    ├─ layers.py
+ │    ├─ optimizer.py
+ │    ├─ util.py
+ │    └─ gradient.py
+ │
+ ├── dataset
+ │    ├─ __init__.py
+ │    ├─ mnist.py
+ │    └─ fashion_mnist_loader.py
+ │
+ ├── model
+ │    ├─ multi_layer_net.py
+ │    └─ multi_layer_net_extend.py
+ │
+ ├─ data
+ │    └─ mnist_reader.py
+ │
+ ├─ test
+ │    ├─ hyperparameter_optimization.py
+ │    ├─ train_and_save_network.py
+ │    ├─ train_neuralnet_adam.py
+ │    ├─ fashion_mnist_test_sample_selection.py
+ │    └─ train.py
+ │
+ ├─ network_Team7.pkl
+ ├─ test_data.pkl
  ├── Competition_Code_NeuralNet.py
- ├── hyperparameter_optimization.py
- ├── train_and_save_network.py
  └── README.md
 ```
-
-* **dataset/**: Fashion-MNIST 4개 파일을 저장
-* **models/**: MLP 또는 CNN 모델 클래스
-* **utils/**: 데이터 로더, 전처리, 보조 함수
-* **train.py**: 학습 메인 스크립트
-* **evaluate.py**: 학습된 모델 성능 평가
-* **plot.py**: 학습 곡선 시각화
 
 ---
 
