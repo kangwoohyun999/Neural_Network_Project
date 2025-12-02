@@ -103,52 +103,6 @@ Neural_Network_Project
 
 ---
 
-## 🚀 설치 및 실행 방법
-
-### 1. 저장소 클론
-
-```bash
-git clone https://github.com/kangwoohyun999/Neural_Network_Project.git
-cd Neural_Network_Project
-```
-
-### 2. Python 환경 구성
-
-```bash
-pip install -r requirements.txt
-```
-
-또는 개별 설치:
-
-```bash
-pip install numpy matplotlib torch torchvision
-```
-
-### 3. 데이터 준비
-
-Fashion-MNIST 데이터 ZIP 다운로드 후 압축 해제 → dataset 폴더에 4개 파일 복사:
-
-```
-train-images-idx3-ubyte
-train-labels-idx1-ubyte
-t10k-images-idx3-ubyte
-t10k-labels-idx1-ubyte
-```
-
-### 4. 학습 실행
-
-```bash
-python train.py
-```
-
-### 5. 성능 평가
-
-```bash
-python evaluate.py
-```
-
----
-
 ## 🧠 코드 동작 흐름 (train.py 기준)
 
 1. **데이터 로딩**: Fashion-MNIST 불러오기 → Train/Validation 분리 → DataLoader 구성
