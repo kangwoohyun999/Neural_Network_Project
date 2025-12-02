@@ -74,31 +74,30 @@ Neural_Network_Project
  │    ├─ layers.py
  │    ├─ optimizer.py
  │    ├─ util.py
+ │    ├─ multi_layer_net.py
+ │    ├─ multi_layer_net_extend.py
  │    └─ gradient.py
  │
- ├── dataset
- │    ├─ __init__.py
- │    ├─ mnist.py
- │    └─ fashion_mnist_loader.py
- │
- ├── model
- │    ├─ multi_layer_net.py
- │    └─ multi_layer_net_extend.py
- │
  ├─ data
+ │    └─ fashion
+ │          ├─ t10k-images-idx3-ubyte.gz
+ │          ├─ t10k-labels-idx1-ubyte.gz
+ │          ├─ train-images-idx3-ubyte.gz
+ │          └─ train-labels-idx1-ubyte.gz
+ │
+ ├─ utils
+ │    ├─ __init__.py
+ │    ├─ argparser.py
+ │    ├─ helper.py
  │    └─ mnist_reader.py
  │
- ├─ test
- │    ├─ hyperparameter_optimization.py
- │    ├─ train_and_save_network.py
- │    ├─ train_neuralnet_adam.py
- │    ├─ fashion_mnist_test_sample_selection.py
- │    └─ train.py
- │
  ├─ network_Team7.pkl
- ├─ test_data.pkl
- ├── Competition_Code_NeuralNet.py
- └── README.md
+ ├─ activation_init_compare_fashion_mnist.py
+ ├─ depth_compare_fashion_mnist.py
+ ├─ weight_decay_compare_fashion_mnist.py
+ ├─ optimizer_compare_fashion_mnist.py
+ ├─ train_fashion_mnist_team7.py
+ └─ README.md
 ```
 
 ---
