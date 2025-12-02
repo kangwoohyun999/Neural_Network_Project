@@ -7,7 +7,7 @@ ex) C:\Users\user\Downloads\Neural_Network_Project\dataset\mnist.py
 * mnist.py 실행
 * (테스트중)
 
-## Fashion-mnist 다운로드
+## Fashion-mnist 다운로드 (mnist 실행하면 알아서 설치됨)
 https://github.com/zalandoresearch/fashion-mnist
 * ZIP 파일 다운로드 후 압축 해제
 * data/fashion/... (4개 파일)
