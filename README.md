@@ -19,61 +19,47 @@ https://github.com/zalandoresearch/fashion-mnist
 ## 🎯 간단 소개
 
 1. 목적
+
 * Fashion-MNIST 분류
 * 교재 4–6장 기반
 * Adam 사용
+* 6층 이하 신경망
 
-6층 이하 신경망
+2. 데이터셋 설명
 
-② 데이터셋 설명
+* 28×28 gray, 10 classes
+* Train 60,000 / Test 10,000
 
-28×28 gray, 10 classes
+3. 모델 구조
 
-Train 60,000 / Test 10,000
+* Input 784
+* Dense 256 → ReLU
+* Dense 256 → ReLU
+* Dense 128 → ReLU
+* Output 10
 
-③ 모델 구조
+4. 방법론
 
-Input 784
+* Adam → 빠른 수렴
+* Dropout → 과적합 완화
+* ReLU + He 초기화
+* 미니배치 학습
 
-Dense 256 → ReLU
+5. 실험
 
-Dense 256 → ReLU
+* Learning rate 비교
+* Dropout 유무 비교
+* Batchnorm 유무 비교
 
-Dense 128 → ReLU
+6. 결과
 
-Output 10
+* 최종 Train/Test accuracy
+* Loss / Accuracy curve
 
-④ 방법론
+7. 결론
 
-Adam → 빠른 수렴
-
-Dropout → 과적합 완화
-
-ReLU + He 초기화
-
-미니배치 학습
-
-⑤ 실험
-
-Learning rate 비교
-
-Dropout 유무 비교
-
-Batchnorm 유무 비교
-
-⑥ 결과
-
-최종 Train/Test accuracy
-
-Loss / Accuracy curve
-
-⑦ 결론
-
-Dropout이 가장 효과적
-
-Adam이 SGD 대비 빠름
-
-최종 모델 제출
+* Dropout이 가장 효과적
+* Adam이 SGD 대비 빠름
 
 ---
 
