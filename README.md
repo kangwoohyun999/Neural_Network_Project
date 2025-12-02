@@ -16,14 +16,12 @@ https://github.com/zalandoresearch/fashion-mnist
 ## 실행
 
 
-🎯 간단 소개
-① 목적
+## 🎯 간단 소개
 
-Fashion-MNIST 분류
-
-교재 4–6장 기반
-
-Adam 사용
+1. 목적
+* Fashion-MNIST 분류
+* 교재 4–6장 기반
+* Adam 사용
 
 6층 이하 신경망
 
