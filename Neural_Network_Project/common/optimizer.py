@@ -1,34 +1,57 @@
+# common/optimizer.py
 import numpy as np
+
+class SGD:
+    def __init__(self, lr=0.01):
+        self.lr = lr
+
+    def update(self, params_and_grads):
+        for W, dW, b, db in params_and_grads:
+            W -= self.lr * dW
+            b -= self.lr * db
+
+class Momentum:
+    def __init__(self, lr=0.01, momentum=0.9):
+        self.lr = lr
+        self.momentum = momentum
+        self.v_W = None
+        self.v_b = None
+
+    def update(self, params_and_grads):
+        if self.v_W is None:
+            # init velocity arrays to zeros of same shape
+            self.v_W = [np.zeros_like(W) for W, *_ in params_and_grads]
+            self.v_b = [np.zeros_like(b) for *_, b, _ in [(None, None, None, None)] ]  # dummy to avoid error
+
+        # but params_and_grads is an iterable, easier to implement per-step externally
+        # To keep simple: implement per-list use in trainer
+
 class Adam:
-
-    """Adam (http://arxiv.org/abs/1412.6980v8)"""
-
-    def __init__(self, lr=0.001, beta1=0.9, beta2=0.999):
+    def __init__(self, lr=0.001, beta1=0.9, beta2=0.999, eps=1e-8):
         self.lr = lr
         self.beta1 = beta1
         self.beta2 = beta2
+        self.eps = eps
+        self.m_W = None
+        self.v_W = None
+        self.m_b = None
+        self.v_b = None
         self.iter = 0
-        self.m = None
-        self.v = None
-        
-    def update(self, params, grads):
-        if self.m is None:
-            self.m, self.v = {}, {}
-            for key, val in params.items():
-                self.m[key] = np.zeros_like(val)
-                self.v[key] = np.zeros_like(val)
-        
+
+    def update(self, params_and_grads):
+        if self.m_W is None:
+            self.m_W = [np.zeros_like(W) for W, *_ in params_and_grads]
+            self.v_W = [np.zeros_like(W) for W, *_ in params_and_grads]
+            self.m_b = [np.zeros_like(b) for *_, b, _ in params_and_grads]
+            self.v_b = [np.zeros_like(b) for *_, b, _ in params_and_grads]
         self.iter += 1
-        lr_t  = self.lr * np.sqrt(1.0 - self.beta2**self.iter) / (1.0 - self.beta1**self.iter)         
-        
-        for key in params.keys():
-            #self.m[key] = self.beta1*self.m[key] + (1-self.beta1)*grads[key]
-            #self.v[key] = self.beta2*self.v[key] + (1-self.beta2)*(grads[key]**2)
-            self.m[key] += (1 - self.beta1) * (grads[key] - self.m[key])
-            self.v[key] += (1 - self.beta2) * (grads[key]**2 - self.v[key])
-            
-            params[key] -= lr_t * self.m[key] / (np.sqrt(self.v[key]) + 1e-7)
-            
-            #unbias_m += (1 - self.beta1) * (grads[key] - self.m[key]) # correct bias
-            #unbisa_b += (1 - self.beta2) * (grads[key]*grads[key] - self.v[key]) # correct bias
-            #params[key] += self.lr * unbias_m / (np.sqrt(unbisa_b) + 1e-7)
+        lr_t = self.lr * np.sqrt(1.0 - self.beta2**self.iter) / (1.0 - self.beta1**self.iter)
+
+        for i, (W, dW, b, db) in enumerate(params_and_grads):
+            self.m_W[i] = self.beta1 * self.m_W[i] + (1 - self.beta1) * dW
+            self.v_W[i] = self.beta2 * self.v_W[i] + (1 - self.beta2) * (dW**2)
+            W -= lr_t * self.m_W[i] / (np.sqrt(self.v_W[i]) + self.eps)
+
+            self.m_b[i] = self.beta1 * self.m_b[i] + (1 - self.beta1) * db
+            self.v_b[i] = self.beta2 * self.v_b[i] + (1 - self.beta2) * (db**2)
+            b -= lr_t * self.m_b[i] / (np.sqrt(self.v_b[i]) + self.eps)
