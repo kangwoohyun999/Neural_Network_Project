@@ -12,10 +12,13 @@ import pickle
 from itertools import product
 from common.multi_layer_net import MultiLayerNet
 from common.trainer import Trainer
-from utils.mnist_reader import load_fashion_mnist
+from run.train_fashion_mnist_team7 import load_fashion_mnist
+from utils.mnist_reader import load_mnist
 
-# 데이터 로드
-(x_train, t_train), (x_test, t_test) = load_fashion_mnist(flatten=True, normalize=True)
+
+data_dir = os.path.join(os.path.dirname(__file__), 'data', 'fashion')
+X_train, t_train = load_mnist(data_dir, kind='train')
+X_test, t_test = load_mnist(data_dir, kind='t10k')
 
 # ============================
 # 하이퍼파라미터 그리드 설정
