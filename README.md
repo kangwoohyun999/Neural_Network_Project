@@ -1,7 +1,5 @@
 # 신경망 조별과제
 
-## pkl 파일은 예시 파일입니다. 생성된 파일 아닙니다.
-
 ## 실행 방법
 ex) C:\Users\user\Downloads\Neural_Network_Project\dataset\mnist.py
 * mnist.py 실행
