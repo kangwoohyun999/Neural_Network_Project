@@ -94,8 +94,10 @@ Neural_Network_Project
  ├─ network_Team7.pkl
  ├─ activation_init_compare_fashion_mnist.py
  ├─ depth_compare_fashion_mnist.py
+ ├─ dropout_compare_fashion_mnist.py
  ├─ weight_decay_compare_fashion_mnist.py
  ├─ optimizer_compare_fashion_mnist.py
+ ├─ train_fashion_mnist_team7_final.py
  ├─ train_fashion_mnist_team7.py
  └─ README.md
 ```
